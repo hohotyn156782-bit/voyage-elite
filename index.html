@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VOYAGE ELITE — эксклюзивное туристическое агентство. Путешествия за пределами обыкновенного.">
+  <meta name="theme-color" content="#0f1923">
+  <title>VOYAGE ELITE — Путешествия за пределами обыкновенного</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f1923'/%3E%3Ctext x='50' y='68' font-size='55' font-family='serif' fill='%23d4956a' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Swiper -->
+  <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== SCROLL PROGRESS BAR ========== -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- ========== PRELOADER ========== -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__spinner"></div>
+    <span class="preloader__text">VOYAGE ELITE</span>
+  </div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="header__logo">VOYAGE<span>ELITE</span></a>
+
+      <nav class="header__nav" id="headerNav">
+        <ul class="header__menu">
+          <li><a href="#destinations" class="header__link" data-lang-ru="Направления" data-lang-en="Destinations">Направления</a></li>
+          <li><a href="#tours" class="header__link" data-lang-ru="Туры" data-lang-en="Tours">Туры</a></li>
+          <li><a href="#about" class="header__link" data-lang-ru="О нас" data-lang-en="About Us">О нас</a></li>
+          <li><a href="#deals" class="header__link" data-lang-ru="Горячие предложения" data-lang-en="Hot Deals">Горячие предложения</a></li>
+          <li><a href="#contact" class="header__link" data-lang-ru="Контакты" data-lang-en="Contacts">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-toggle__current">RU</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <canvas class="hero__sparkle-canvas" id="heroSparkleCanvas"></canvas>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <p class="hero__subtitle-top" data-aos="fade-down" data-aos-delay="300"
+         data-lang-ru="Эксклюзивное туристическое агентство"
+         data-lang-en="Exclusive Travel Agency">Эксклюзивное туристическое агентство</p>
+      <h1 class="hero__title" data-aos="fade-up" data-aos-delay="500">
+        <span data-lang-ru="Откройте для себя" data-lang-en="Discover">Откройте для себя</span><br>
+        <span class="hero__typed-wrap" id="typedWrap"></span>
+      </h1>
+      <p class="hero__subtitle" data-aos="fade-up" data-aos-delay="700"
+         data-lang-ru="Эксклюзивные путешествия для тех, кто ценит совершенство"
+         data-lang-en="Exclusive travel for those who appreciate perfection">Эксклюзивные путешествия для тех, кто ценит совершенство</p>
+      <a href="#tours" class="btn btn--hero" data-aos="fade-up" data-aos-delay="900"
+         data-lang-ru="Исследовать туры" data-lang-en="Explore Tours">Исследовать туры</a>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span data-lang-ru="Листайте вниз" data-lang-en="Scroll down">Листайте вниз</span>
+      <div class="hero__chevron"></div>
+    </div>
+  </section>
+
+  <!-- ========== DESTINATIONS SECTION ========== -->
+  <section class="destinations section" id="destinations">
+    <div class="container">
+      <h2 class="section__title gold-text" data-aos="fade-up"
+          data-lang-ru="Направления мечты" data-lang-en="Dream Destinations">Направления мечты</h2>
+      <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100"
+         data-lang-ru="Откройте самые впечатляющие уголки планеты"
+         data-lang-en="Discover the most breathtaking corners of the planet">Откройте самые впечатляющие уголки планеты</p>
+    </div>
+    <div class="destinations__slider" data-aos="fade-up" data-aos-delay="200">
+      <div class="swiper destinationsSwiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="dest-card dest-card--maldives">
+              <div class="dest-card__overlay"></div>
+              <div class="dest-card__content">
+                <span class="dest-card__tag" data-lang-ru="Острова" data-lang-en="Islands">Острова</span>
+                <h3 class="dest-card__title" data-lang-ru="Мальдивы" data-lang-en="Maldives">Мальдивы</h3>
+                <p class="dest-card__tagline" data-lang-ru="Рай на Земле" data-lang-en="Paradise on Earth">Рай на Земле</p>
+                <span class="dest-card__price" data-lang-ru="от $4 500" data-lang-en="from $4,500">от $4 500</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="dest-card dest-card--switzerland">
+              <div class="dest-card__overlay"></div>
+              <div class="dest-card__content">
+                <span class="dest-card__tag" data-lang-ru="Горы" data-lang-en="Mountains">Горы</span>
+                <h3 class="dest-card__title" data-lang-ru="Швейцария" data-lang-en="Switzerland">Швейцария</h3>
+                <p class="dest-card__tagline" data-lang-ru="Величие Альп" data-lang-en="Majesty of the Alps">Величие Альп</p>
+                <span class="dest-card__price" data-lang-ru="от $5 200" data-lang-en="from $5,200">от $5 200</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="dest-card dest-card--japan">
+              <div class="dest-card__overlay"></div>
+              <div class="dest-card__content">
+                <span class="dest-card__tag" data-lang-ru="Культура" data-lang-en="Culture">Культура</span>
+                <h3 class="dest-card__title" data-lang-ru="Япония" data-lang-en="Japan">Япония</h3>
+                <p class="dest-card__tagline" data-lang-ru="Страна восходящего солнца" data-lang-en="Land of the Rising Sun">Страна восходящего солнца</p>
+                <span class="dest-card__price" data-lang-ru="от $6 800" data-lang-en="from $6,800">от $6 800</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="dest-card dest-card--dubai">
+              <div class="dest-card__overlay"></div>
+              <div class="dest-card__content">
+                <span class="dest-card__tag" data-lang-ru="Роскошь" data-lang-en="Luxury">Роскошь</span>
+                <h3 class="dest-card__title" data-lang-ru="Дубай" data-lang-en="Dubai">Дубай</h3>
+                <p class="dest-card__tagline" data-lang-ru="Город будущего" data-lang-en="City of the Future">Город будущего</p>
+                <span class="dest-card__price" data-lang-ru="от $3 900" data-lang-en="from $3,900">от $3 900</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="dest-card dest-card--bali">
+              <div class="dest-card__overlay"></div>
+              <div class="dest-card__content">
+                <span class="dest-card__tag" data-lang-ru="Релакс" data-lang-en="Relax">Релакс</span>
+                <h3 class="dest-card__title" data-lang-ru="Бали" data-lang-en="Bali">Бали</h3>
+                <p class="dest-card__tagline" data-lang-ru="Остров богов" data-lang-en="Island of the Gods">Остров богов</p>
+                <span class="dest-card__price" data-lang-ru="от $3 200" data-lang-en="from $3,200">от $3 200</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="dest-card dest-card--santorini">
+              <div class="dest-card__overlay"></div>
+              <div class="dest-card__content">
+                <span class="dest-card__tag" data-lang-ru="Романтика" data-lang-en="Romance">Романтика</span>
+                <h3 class="dest-card__title" data-lang-ru="Санторини" data-lang-en="Santorini">Санторини</h3>
+                <p class="dest-card__tagline" data-lang-ru="Закаты Эгейского моря" data-lang-en="Aegean Sunsets">Закаты Эгейского моря</p>
+                <span class="dest-card__price" data-lang-ru="от $4 100" data-lang-en="from $4,100">от $4 100</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARALLAX DIVIDER 1 ========== -->
+  <div class="parallax-divider parallax-divider--1">
+    <div class="parallax-divider__content">
+      <p class="parallax-divider__quote gold-text" data-lang-ru="&laquo;Мир — это книга, и те, кто не путешествует, читают лишь одну страницу&raquo;" data-lang-en="&laquo;The world is a book, and those who do not travel read only one page&raquo;">&laquo;Мир — это книга, и те, кто не путешествует, читают лишь одну страницу&raquo;</p>
+      <span class="parallax-divider__author" data-lang-ru="— Святой Августин" data-lang-en="— Saint Augustine">— Святой Августин</span>
+    </div>
+  </div>
+
+  <!-- ========== TOURS SECTION ========== -->
+  <section class="tours section" id="tours">
+    <div class="container">
+      <h2 class="section__title gold-text" data-aos="fade-up"
+          data-lang-ru="Эксклюзивные туры" data-lang-en="Exclusive Tours">Эксклюзивные туры</h2>
+      <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100"
+         data-lang-ru="Каждое путешествие — произведение искусства"
+         data-lang-en="Every journey is a work of art">Каждое путешествие — произведение искусства</p>
+
+      <div class="tours__grid">
+
+        <div class="tour-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="tour-card__image tour-card__image--maldives">
+            <span class="tour-card__badge" data-lang-ru="Хит" data-lang-en="Hit">Хит</span>
+          </div>
+          <div class="tour-card__body">
+            <h3 class="tour-card__title" data-lang-ru="Мальдивы Luxury" data-lang-en="Maldives Luxury">Мальдивы Luxury</h3>
+            <div class="tour-card__meta">
+              <span data-lang-ru="7 ночей" data-lang-en="7 nights">7 ночей</span>
+              <span class="tour-card__price">$4 500</span>
+            </div>
+            <ul class="tour-card__highlights">
+              <li data-lang-ru="Вилла над водой" data-lang-en="Overwater villa">Вилла над водой</li>
+              <li data-lang-ru="Частный пляж" data-lang-en="Private beach">Частный пляж</li>
+              <li data-lang-ru="Спа-процедуры" data-lang-en="Spa treatments">Спа-процедуры</li>
+              <li data-lang-ru="Дайвинг с мантами" data-lang-en="Manta ray diving">Дайвинг с мантами</li>
+            </ul>
+            <a href="#finder" class="btn btn--card" data-lang-ru="Подробнее" data-lang-en="Learn More">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tour-card__image tour-card__image--alps">
+            <span class="tour-card__badge" data-lang-ru="Зима" data-lang-en="Winter">Зима</span>
+          </div>
+          <div class="tour-card__body">
+            <h3 class="tour-card__title" data-lang-ru="Альпы Ski & Relax" data-lang-en="Alps Ski & Relax">Альпы Ski & Relax</h3>
+            <div class="tour-card__meta">
+              <span data-lang-ru="10 ночей" data-lang-en="10 nights">10 ночей</span>
+              <span class="tour-card__price">$5 200</span>
+            </div>
+            <ul class="tour-card__highlights">
+              <li data-lang-ru="Шале 5 звёзд" data-lang-en="5-star chalet">Шале 5 звёзд</li>
+              <li data-lang-ru="Горнолыжный курорт" data-lang-en="Ski resort">Горнолыжный курорт</li>
+              <li data-lang-ru="Фондю-вечера" data-lang-en="Fondue evenings">Фондю-вечера</li>
+              <li data-lang-ru="Термальные источники" data-lang-en="Thermal springs">Термальные источники</li>
+            </ul>
+            <a href="#finder" class="btn btn--card" data-lang-ru="Подробнее" data-lang-en="Learn More">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="tour-card__image tour-card__image--tokyo">
+            <span class="tour-card__badge" data-lang-ru="Культура" data-lang-en="Culture">Культура</span>
+          </div>
+          <div class="tour-card__body">
+            <h3 class="tour-card__title" data-lang-ru="Токио: Дух Японии" data-lang-en="Tokyo: Spirit of Japan">Токио: Дух Японии</h3>
+            <div class="tour-card__meta">
+              <span data-lang-ru="12 ночей" data-lang-en="12 nights">12 ночей</span>
+              <span class="tour-card__price">$6 800</span>
+            </div>
+            <ul class="tour-card__highlights">
+              <li data-lang-ru="Рёкан с онсэном" data-lang-en="Ryokan with onsen">Рёкан с онсэном</li>
+              <li data-lang-ru="Чайная церемония" data-lang-en="Tea ceremony">Чайная церемония</li>
+              <li data-lang-ru="Гора Фудзи" data-lang-en="Mount Fuji">Гора Фудзи</li>
+              <li data-lang-ru="Гейша-квартал" data-lang-en="Geisha district">Гейша-квартал</li>
+            </ul>
+            <a href="#finder" class="btn btn--card" data-lang-ru="Подробнее" data-lang-en="Learn More">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="tour-card__image tour-card__image--dubai">
+            <span class="tour-card__badge">VIP</span>
+          </div>
+          <div class="tour-card__body">
+            <h3 class="tour-card__title" data-lang-ru="Дубай VIP Experience" data-lang-en="Dubai VIP Experience">Дубай VIP Experience</h3>
+            <div class="tour-card__meta">
+              <span data-lang-ru="5 ночей" data-lang-en="5 nights">5 ночей</span>
+              <span class="tour-card__price">$3 900</span>
+            </div>
+            <ul class="tour-card__highlights">
+              <li data-lang-ru="Бурдж Аль Араб" data-lang-en="Burj Al Arab">Бурдж Аль Араб</li>
+              <li data-lang-ru="Сафари в пустыне" data-lang-en="Desert safari">Сафари в пустыне</li>
+              <li data-lang-ru="Яхта-круиз" data-lang-en="Yacht cruise">Яхта-круиз</li>
+              <li data-lang-ru="Шопинг-тур" data-lang-en="Shopping tour">Шопинг-тур</li>
+            </ul>
+            <a href="#finder" class="btn btn--card" data-lang-ru="Подробнее" data-lang-en="Learn More">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tour-card__image tour-card__image--bali">
+            <span class="tour-card__badge" data-lang-ru="Велнес" data-lang-en="Wellness">Велнес</span>
+          </div>
+          <div class="tour-card__body">
+            <h3 class="tour-card__title" data-lang-ru="Бали Wellness Retreat" data-lang-en="Bali Wellness Retreat">Бали Wellness Retreat</h3>
+            <div class="tour-card__meta">
+              <span data-lang-ru="14 ночей" data-lang-en="14 nights">14 ночей</span>
+              <span class="tour-card__price">$3 200</span>
+            </div>
+            <ul class="tour-card__highlights">
+              <li data-lang-ru="Йога-ретрит" data-lang-en="Yoga retreat">Йога-ретрит</li>
+              <li data-lang-ru="Балийский массаж" data-lang-en="Balinese massage">Балийский массаж</li>
+              <li data-lang-ru="Рисовые террасы" data-lang-en="Rice terraces">Рисовые террасы</li>
+              <li data-lang-ru="Храмы Убуда" data-lang-en="Ubud temples">Храмы Убуда</li>
+            </ul>
+            <a href="#finder" class="btn btn--card" data-lang-ru="Подробнее" data-lang-en="Learn More">Подробнее</a>
+          </div>
+        </div>
+
+        <div class="tour-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="tour-card__image tour-card__image--santorini">
+            <span class="tour-card__badge" data-lang-ru="Романтика" data-lang-en="Romance">Романтика</span>
+          </div>
+          <div class="tour-card__body">
+            <h3 class="tour-card__title" data-lang-ru="Санторини Romance" data-lang-en="Santorini Romance">Санторини Romance</h3>
+            <div class="tour-card__meta">
+              <span data-lang-ru="7 ночей" data-lang-en="7 nights">7 ночей</span>
+              <span class="tour-card__price">$4 100</span>
+            </div>
+            <ul class="tour-card__highlights">
+              <li data-lang-ru="Вилла с видом на кальдеру" data-lang-en="Caldera view villa">Вилла с видом на кальдеру</li>
+              <li data-lang-ru="Закат в Ие" data-lang-en="Oia sunset">Закат в Ие</li>
+              <li data-lang-ru="Винный тур" data-lang-en="Wine tour">Винный тур</li>
+              <li data-lang-ru="Круиз на катамаране" data-lang-en="Catamaran cruise">Круиз на катамаране</li>
+            </ul>
+            <a href="#finder" class="btn btn--card" data-lang-ru="Подробнее" data-lang-en="Learn More">Подробнее</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US SECTION ========== -->
+  <section class="about section" id="about">
+    <div class="container">
+      <h2 class="section__title gold-text" data-aos="fade-up"
+          data-lang-ru="Почему выбирают нас" data-lang-en="Why Choose Us">Почему выбирают нас</h2>
+      <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100"
+         data-lang-ru="Цифры, которые говорят сами за себя"
+         data-lang-en="Numbers that speak for themselves">Цифры, которые говорят сами за себя</p>
+
+      <div class="counters" data-aos="fade-up" data-aos-delay="200">
+        <div class="counter">
+          <span class="counter__number" data-target="12">0</span><span class="counter__plus">+</span>
+          <span class="counter__label" data-lang-ru="лет опыта" data-lang-en="years of experience">лет опыта</span>
+        </div>
+        <div class="counter">
+          <span class="counter__number" data-target="50">0</span><span class="counter__plus">+</span>
+          <span class="counter__label" data-lang-ru="стран" data-lang-en="countries">стран</span>
+        </div>
+        <div class="counter">
+          <span class="counter__number" data-target="10000">0</span><span class="counter__plus">+</span>
+          <span class="counter__label" data-lang-ru="клиентов" data-lang-en="clients">клиентов</span>
+        </div>
+        <div class="counter">
+          <span class="counter__number" data-target="98">0</span><span class="counter__plus">%</span>
+          <span class="counter__label" data-lang-ru="довольных" data-lang-en="satisfied">довольных</span>
+        </div>
+      </div>
+
+      <div class="benefits">
+        <div class="benefit" data-aos="fade-up" data-aos-delay="0">
+          <div class="benefit__icon">&#9830;</div>
+          <h3 class="benefit__title" data-lang-ru="Персональный подход" data-lang-en="Personal Approach">Персональный подход</h3>
+          <p class="benefit__text" data-lang-ru="Каждый маршрут создаётся индивидуально под ваши пожелания и мечты" data-lang-en="Every itinerary is crafted individually to match your wishes and dreams">Каждый маршрут создаётся индивидуально под ваши пожелания и мечты</p>
+        </div>
+        <div class="benefit" data-aos="fade-up" data-aos-delay="100">
+          <div class="benefit__icon">&#9733;</div>
+          <h3 class="benefit__title" data-lang-ru="VIP-сервис" data-lang-en="VIP Service">VIP-сервис</h3>
+          <p class="benefit__text" data-lang-ru="Привилегированное обслуживание на каждом этапе вашего путешествия" data-lang-en="Privileged service at every stage of your journey">Привилегированное обслуживание на каждом этапе вашего путешествия</p>
+        </div>
+        <div class="benefit" data-aos="fade-up" data-aos-delay="200">
+          <div class="benefit__icon">&#9742;</div>
+          <h3 class="benefit__title" data-lang-ru="24/7 поддержка" data-lang-en="24/7 Support">24/7 поддержка</h3>
+          <p class="benefit__text" data-lang-ru="Мы на связи круглосуточно — в любой точке мира, в любое время" data-lang-en="We are available around the clock — anywhere in the world, anytime">Мы на связи круглосуточно — в любой точке мира, в любое время</p>
+        </div>
+        <div class="benefit" data-aos="fade-up" data-aos-delay="300">
+          <div class="benefit__icon">&#9827;</div>
+          <h3 class="benefit__title" data-lang-ru="Лучшие цены" data-lang-en="Best Prices">Лучшие цены</h3>
+          <p class="benefit__text" data-lang-ru="Прямые контракты с отелями и авиакомпаниями гарантируют лучшие условия" data-lang-en="Direct contracts with hotels and airlines guarantee the best terms">Прямые контракты с отелями и авиакомпаниями гарантируют лучшие условия</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOT DEALS SECTION ========== -->
+  <section class="deals section" id="deals">
+    <div class="container">
+      <h2 class="section__title gold-text" data-aos="fade-up"
+          data-lang-ru="Горячие предложения" data-lang-en="Hot Deals">Горячие предложения</h2>
+      <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100"
+         data-lang-ru="Успейте забронировать по выгодной цене"
+         data-lang-en="Book at a great price before it's gone">Успейте забронировать по выгодной цене</p>
+
+      <div class="deals__grid">
+
+        <div class="deal-card" data-aos="fade-up" data-aos-delay="0">
+          <div class="deal-card__image deal-card__image--maldives">
+            <span class="deal-card__badge" data-lang-ru="ГОРЯЩЕЕ" data-lang-en="HOT DEAL">ГОРЯЩЕЕ</span>
+          </div>
+          <div class="deal-card__body">
+            <h3 class="deal-card__title" data-lang-ru="Мальдивы — 7 ночей" data-lang-en="Maldives — 7 nights">Мальдивы — 7 ночей</h3>
+            <div class="deal-card__prices">
+              <span class="deal-card__old-price">$4 500</span>
+              <span class="deal-card__new-price">$2 990</span>
+            </div>
+            <div class="deal-card__countdown" data-end="2026-04-15T23:59:59">
+              <div class="countdown-item"><span class="countdown-num" data-days>00</span><span class="countdown-label" data-lang-ru="дн" data-lang-en="d">дн</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-hours>00</span><span class="countdown-label" data-lang-ru="ч" data-lang-en="h">ч</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-mins>00</span><span class="countdown-label" data-lang-ru="мин" data-lang-en="m">мин</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-secs>00</span><span class="countdown-label" data-lang-ru="сек" data-lang-en="s">сек</span></div>
+            </div>
+            <a href="#finder" class="btn btn--deal" data-lang-ru="Забронировать" data-lang-en="Book Now">Забронировать</a>
+          </div>
+        </div>
+
+        <div class="deal-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="deal-card__image deal-card__image--dubai">
+            <span class="deal-card__badge" data-lang-ru="ГОРЯЩЕЕ" data-lang-en="HOT DEAL">ГОРЯЩЕЕ</span>
+          </div>
+          <div class="deal-card__body">
+            <h3 class="deal-card__title" data-lang-ru="Дубай — 5 ночей" data-lang-en="Dubai — 5 nights">Дубай — 5 ночей</h3>
+            <div class="deal-card__prices">
+              <span class="deal-card__old-price">$3 900</span>
+              <span class="deal-card__new-price">$2 490</span>
+            </div>
+            <div class="deal-card__countdown" data-end="2026-04-10T23:59:59">
+              <div class="countdown-item"><span class="countdown-num" data-days>00</span><span class="countdown-label" data-lang-ru="дн" data-lang-en="d">дн</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-hours>00</span><span class="countdown-label" data-lang-ru="ч" data-lang-en="h">ч</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-mins>00</span><span class="countdown-label" data-lang-ru="мин" data-lang-en="m">мин</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-secs>00</span><span class="countdown-label" data-lang-ru="сек" data-lang-en="s">сек</span></div>
+            </div>
+            <a href="#finder" class="btn btn--deal" data-lang-ru="Забронировать" data-lang-en="Book Now">Забронировать</a>
+          </div>
+        </div>
+
+        <div class="deal-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="deal-card__image deal-card__image--santorini">
+            <span class="deal-card__badge" data-lang-ru="ГОРЯЩЕЕ" data-lang-en="HOT DEAL">ГОРЯЩЕЕ</span>
+          </div>
+          <div class="deal-card__body">
+            <h3 class="deal-card__title" data-lang-ru="Санторини — 7 ночей" data-lang-en="Santorini — 7 nights">Санторини — 7 ночей</h3>
+            <div class="deal-card__prices">
+              <span class="deal-card__old-price">$4 100</span>
+              <span class="deal-card__new-price">$2 790</span>
+            </div>
+            <div class="deal-card__countdown" data-end="2026-04-20T23:59:59">
+              <div class="countdown-item"><span class="countdown-num" data-days>00</span><span class="countdown-label" data-lang-ru="дн" data-lang-en="d">дн</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-hours>00</span><span class="countdown-label" data-lang-ru="ч" data-lang-en="h">ч</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-mins>00</span><span class="countdown-label" data-lang-ru="мин" data-lang-en="m">мин</span></div>
+              <div class="countdown-item"><span class="countdown-num" data-secs>00</span><span class="countdown-label" data-lang-ru="сек" data-lang-en="s">сек</span></div>
+            </div>
+            <a href="#finder" class="btn btn--deal" data-lang-ru="Забронировать" data-lang-en="Book Now">Забронировать</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PARALLAX DIVIDER 2 ========== -->
+  <div class="parallax-divider parallax-divider--2">
+    <div class="parallax-divider__content">
+      <p class="parallax-divider__quote gold-text" data-lang-ru="Создаём воспоминания, которые остаются навсегда" data-lang-en="Creating memories that last forever">Создаём воспоминания, которые остаются навсегда</p>
+    </div>
+  </div>
+
+  <!-- ========== TOUR FINDER SECTION ========== -->
+  <section class="finder section" id="finder">
+    <div class="container">
+      <h2 class="section__title gold-text" data-aos="fade-up"
+          data-lang-ru="Подберите идеальный тур" data-lang-en="Find Your Perfect Tour">Подберите идеальный тур</h2>
+      <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100"
+         data-lang-ru="Заполните форму и мы подготовим лучшие варианты"
+         data-lang-en="Fill out the form and we'll prepare the best options">Заполните форму и мы подготовим лучшие варианты</p>
+
+      <form class="finder__form" data-aos="fade-up" data-aos-delay="200" id="finderForm">
+        <div class="finder__grid">
+          <div class="form-group">
+            <label data-lang-ru="Направление" data-lang-en="Destination">Направление</label>
+            <select name="destination" required>
+              <option value="" data-lang-ru="Выберите направление" data-lang-en="Select destination">Выберите направление</option>
+              <option value="maldives" data-lang-ru="Мальдивы" data-lang-en="Maldives">Мальдивы</option>
+              <option value="switzerland" data-lang-ru="Швейцария" data-lang-en="Switzerland">Швейцария</option>
+              <option value="japan" data-lang-ru="Япония" data-lang-en="Japan">Япония</option>
+              <option value="dubai" data-lang-ru="Дубай" data-lang-en="Dubai">Дубай</option>
+              <option value="bali" data-lang-ru="Бали" data-lang-en="Bali">Бали</option>
+              <option value="santorini" data-lang-ru="Санторини" data-lang-en="Santorini">Санторини</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-lang-ru="Даты поездки" data-lang-en="Travel Dates">Даты поездки</label>
+            <input type="date" name="dates" required>
+          </div>
+          <div class="form-group">
+            <label data-lang-ru="Бюджет" data-lang-en="Budget">Бюджет</label>
+            <select name="budget" required>
+              <option value="" data-lang-ru="Укажите бюджет" data-lang-en="Select budget">Укажите бюджет</option>
+              <option value="2000-4000">$2 000 — $4 000</option>
+              <option value="4000-6000">$4 000 — $6 000</option>
+              <option value="6000-10000">$6 000 — $10 000</option>
+              <option value="10000+" data-lang-ru="$10 000 и выше" data-lang-en="$10,000 and above">$10 000 и выше</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-lang-ru="Кол-во путешественников" data-lang-en="Number of Travelers">Кол-во путешественников</label>
+            <select name="travelers" required>
+              <option value="1">1</option>
+              <option value="2" selected>2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5+">5+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group form-group--full">
+          <label data-lang-ru="Особые пожелания" data-lang-en="Special Requests">Особые пожелания</label>
+          <textarea name="requests" rows="4" data-lang-ru-placeholder="Расскажите о ваших предпочтениях..." data-lang-en-placeholder="Tell us about your preferences..." placeholder="Расскажите о ваших предпочтениях..."></textarea>
+        </div>
+        <button type="submit" class="btn btn--submit" data-lang-ru="Подобрать тур" data-lang-en="Find a Tour">Подобрать тур</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS SECTION ========== -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <h2 class="section__title gold-text" data-aos="fade-up"
+          data-lang-ru="Отзывы наших клиентов" data-lang-en="Client Testimonials">Отзывы наших клиентов</h2>
+      <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100"
+         data-lang-ru="Истории тех, кто уже путешествовал с нами"
+         data-lang-en="Stories from those who have already traveled with us">Истории тех, кто уже путешествовал с нами</p>
+
+      <div class="swiper testimonialsSwiper" data-aos="fade-up" data-aos-delay="200">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text" data-lang-ru="Это было лучшее путешествие в нашей жизни! VOYAGE ELITE организовали всё безупречно — от трансфера до сюрпризов на вилле. Мальдивы стали нашей сказкой." data-lang-en="This was the best trip of our lives! VOYAGE ELITE organized everything impeccably — from transfers to villa surprises. The Maldives became our fairy tale.">Это было лучшее путешествие в нашей жизни! VOYAGE ELITE организовали всё безупречно — от трансфера до сюрпризов на вилле. Мальдивы стали нашей сказкой.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">АК</div>
+                <div>
+                  <strong data-lang-ru="Анна & Кирилл" data-lang-en="Anna & Kirill">Анна & Кирилл</strong>
+                  <span data-lang-ru="Мальдивы, 2025" data-lang-en="Maldives, 2025">Мальдивы, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text" data-lang-ru="Поездка в Японию превзошла все ожидания. Персональный гид, уникальные маршруты, рёкан с видом на Фудзи — это было незабываемо. Спасибо VOYAGE ELITE!" data-lang-en="The trip to Japan exceeded all expectations. A personal guide, unique routes, a ryokan with a view of Fuji — it was unforgettable. Thank you VOYAGE ELITE!">Поездка в Японию превзошла все ожидания. Персональный гид, уникальные маршруты, рёкан с видом на Фудзи — это было незабываемо. Спасибо VOYAGE ELITE!</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">МД</div>
+                <div>
+                  <strong data-lang-ru="Михаил Д." data-lang-en="Mikhail D.">Михаил Д.</strong>
+                  <span data-lang-ru="Япония, 2025" data-lang-en="Japan, 2025">Япония, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text" data-lang-ru="Дубай с VOYAGE ELITE — это совершенно другой уровень. VIP-обслуживание, яхта на закате, ужин в Бурдж Аль Араб. Мы вернулись с ощущением, что побывали в другой вселенной." data-lang-en="Dubai with VOYAGE ELITE is a completely different level. VIP service, a yacht at sunset, dinner at Burj Al Arab. We returned feeling like we had been to another universe.">Дубай с VOYAGE ELITE — это совершенно другой уровень. VIP-обслуживание, яхта на закате, ужин в Бурдж Аль Араб. Мы вернулись с ощущением, что побывали в другой вселенной.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">ЕС</div>
+                <div>
+                  <strong data-lang-ru="Елена С." data-lang-en="Elena S.">Елена С.</strong>
+                  <span data-lang-ru="Дубай, 2024" data-lang-en="Dubai, 2024">Дубай, 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p class="testimonial-card__text" data-lang-ru="Санторини на годовщину свадьбы — лучший подарок, который мы могли себе сделать. Закаты, вино, романтические ужины... VOYAGE ELITE знают, как создать магию." data-lang-en="Santorini for our wedding anniversary was the best gift we could give ourselves. Sunsets, wine, romantic dinners... VOYAGE ELITE knows how to create magic.">Санторини на годовщину свадьбы — лучший подарок, который мы могли себе сделать. Закаты, вино, романтические ужины... VOYAGE ELITE знают, как создать магию.</p>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__avatar">ИО</div>
+                <div>
+                  <strong data-lang-ru="Игорь & Ольга" data-lang-en="Igor & Olga">Игорь & Ольга</strong>
+                  <span data-lang-ru="Санторини, 2025" data-lang-en="Santorini, 2025">Санторини, 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination testimonials-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <h2 class="section__title gold-text" data-aos="fade-up"
+          data-lang-ru="Свяжитесь с нами" data-lang-en="Contact Us">Свяжитесь с нами</h2>
+      <p class="section__subtitle" data-aos="fade-up" data-aos-delay="100"
+         data-lang-ru="Мы готовы воплотить ваше идеальное путешествие"
+         data-lang-en="We are ready to create your perfect journey">Мы готовы воплотить ваше идеальное путешествие</p>
+
+      <div class="contact__grid">
+
+        <div class="contact__info" data-aos="fade-right" data-aos-delay="200">
+          <div class="contact__item">
+            <span class="contact__icon">&#9742;</span>
+            <div>
+              <strong data-lang-ru="Телефон" data-lang-en="Phone">Телефон</strong>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">&#9993;</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:info@voyage-elite.ru">info@voyage-elite.ru</a>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">&#9873;</span>
+            <div>
+              <strong data-lang-ru="Адрес" data-lang-en="Address">Адрес</strong>
+              <span data-lang-ru="Москва, ул. Тверская, 15, офис 401" data-lang-en="Moscow, Tverskaya st. 15, office 401">Москва, ул. Тверская, 15, офис 401</span>
+            </div>
+          </div>
+          <div class="contact__item">
+            <span class="contact__icon">&#9200;</span>
+            <div>
+              <strong data-lang-ru="Часы работы" data-lang-en="Working Hours">Часы работы</strong>
+              <span data-lang-ru="Пн-Пт: 10:00 — 20:00" data-lang-en="Mon-Fri: 10:00 — 20:00">Пн-Пт: 10:00 — 20:00</span><br>
+              <span data-lang-ru="Сб-Вс: 11:00 — 18:00" data-lang-en="Sat-Sun: 11:00 — 18:00">Сб-Вс: 11:00 — 18:00</span>
+            </div>
+          </div>
+          <div class="contact__socials">
+            <a href="#" class="contact__social" aria-label="Telegram">TG</a>
+            <a href="#" class="contact__social" aria-label="WhatsApp">WA</a>
+            <a href="#" class="contact__social" aria-label="Instagram">IG</a>
+            <a href="#" class="contact__social" aria-label="VK">VK</a>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="contact__map">
+            <div class="contact__map-inner">
+              <span data-lang-ru="Карта" data-lang-en="Map">Карта</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form" data-aos="fade-left" data-aos-delay="300" id="contactForm">
+          <div class="form-group">
+            <label data-lang-ru="Ваше имя" data-lang-en="Your Name">Ваше имя</label>
+            <input type="text" name="name" required data-lang-ru-placeholder="Введите имя" data-lang-en-placeholder="Enter your name" placeholder="Введите имя">
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label data-lang-ru="Телефон" data-lang-en="Phone">Телефон</label>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__">
+          </div>
+          <div class="form-group">
+            <label data-lang-ru="Сообщение" data-lang-en="Message">Сообщение</label>
+            <textarea name="message" rows="5" required data-lang-ru-placeholder="Расскажите о вашем идеальном путешествии..." data-lang-en-placeholder="Tell us about your ideal trip..." placeholder="Расскажите о вашем идеальном путешествии..."></textarea>
+          </div>
+          <button type="submit" class="btn btn--submit" data-lang-ru="Отправить" data-lang-en="Send">Отправить</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__top">
+        <a href="#hero" class="footer__logo">VOYAGE<span>ELITE</span></a>
+        <nav class="footer__nav">
+          <a href="#destinations" data-lang-ru="Направления" data-lang-en="Destinations">Направления</a>
+          <a href="#tours" data-lang-ru="Туры" data-lang-en="Tours">Туры</a>
+          <a href="#about" data-lang-ru="О нас" data-lang-en="About">О нас</a>
+          <a href="#deals" data-lang-ru="Горячие предложения" data-lang-en="Hot Deals">Горячие предложения</a>
+          <a href="#contact" data-lang-ru="Контакты" data-lang-en="Contacts">Контакты</a>
+        </nav>
+        <div class="footer__socials">
+          <a href="#" aria-label="Telegram">TG</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="VK">VK</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 VOYAGE ELITE. <span data-lang-ru="Все права защищены." data-lang-en="All rights reserved.">Все права защищены.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+  <!-- ========== SCRIPTS ========== -->
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Typed.js -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- Main JS -->
+  <script src="script.js"></script>
+</body>
+</html>
