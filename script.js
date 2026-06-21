@@ -707,6 +707,15 @@
   /* ========== COUNTDOWN TIMERS ========== */
   var countdownElements = document.querySelectorAll('.deal-card__countdown');
 
+  // Динамические дедлайны — счётчики всегда «живые» (не истекают в 00:00:00:00)
+  var countdownOffsets = [3, 5, 7];
+  countdownElements.forEach(function (el, i) {
+    var end = new Date();
+    end.setDate(end.getDate() + (countdownOffsets[i] || 4));
+    end.setHours(23, 59, 59, 0);
+    el.setAttribute('data-end', end.toISOString());
+  });
+
   function updateCountdowns() {
     var now = new Date().getTime();
 
